@@ -17,7 +17,7 @@ input:focus, label:focus, button:focus {
 }
 
 .ok, .nok {
-  background:red;
+  background:green;
   color:white;
   padding:.2em;
   border-radius: .2em;
@@ -25,7 +25,7 @@ input:focus, label:focus, button:focus {
   font-weight:bold;
 }
 .nok {
-  background: green;
+  background: red;
 }
 .ok:after {
   content:' ✓';
