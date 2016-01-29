@@ -48,8 +48,17 @@
     </ul>
   </dd>
   
-  <dt>TODO: JS behaviour</dt>
-  <dd>Seemingly, what I want to achieve can only be done by <a href="https://css-tricks.com/the-checkbox-hack/#comment-135695">jumping through hoops in Javascript</a>: create a fake label that acts as a button, and associate it with radios for checked/unchecked status</dd>
+  <dt><a href="05-clipped-radios.html">Clipped, absolutely positioned radios</a> (as per <a href="https://github.com/notabene/accessibilitytests/issues/1">a suggestion by MichielBijl</a>) <span class="ok">OK</span></dt>
+  <dd>
+    <ul>
+      <li>Mouse: clicking on a label works</li>
+      <li>Keyboard: focus is on the (slightly hidden) radios and indicated visually on the labels. Normal behaviour on the radios: hitting <kbd>Space</kbd> selects them, hitting <kbd>Enter</kbd> submits the form.</li>
+      <li>However <strong>the <code>clip</code> property has been <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/clip">deprecated</a></strong> at the time of writing.</li>
+    </ul>
+  </dd>
+  
+  <dt>TODO? JS behaviour</dt>
+  <dd><del>Seemingly, what I want to achieve can only be done by <a href="https://css-tricks.com/the-checkbox-hack/#comment-135695">jumping through hoops in Javascript</a>: create a fake label that acts as a button, and associate it with radios for checked/unchecked status</del><ins>May not be needed</ins></dd>
   
 
   </dl>

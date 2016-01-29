@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Clipped, absolutely positioned radios - hiddeninputs</title>
+  <link rel="stylesheet" href="basic.css">
+  <script src="formhandler.js"></script>
+  <style>
+    input[type=radio] {
+      position: absolute;
+      right:100%;
+      clip: rect(0, 0, 0, 0);
+    }
+    input[type=radio]:focus + label {
+      outline: 2px dotted green;
+    }
+    input[type=radio]:checked + label {
+      background: #006600;
+      color:#fff;
+    }
+  </style>
+</head>
+<body>
+
+<h1>Radios hidden with <code>clip()</code> and <code>position:absolute</code>, no behaviour added</h1>
+
+<p>Focus on radio is indicated via <code>input:focus + label</code> with 2px dotted green.</p>
+<p>Checked radio is indicated via <code>input:checked + label</code> with a dark-green background.</p>
+
+<p>Choose a dwarf:</p>
+<form action="">
+  <div><input type="radio" name="dwarfs" id="thingy1" value="Grumpy">
+  <label for="thingy1">Grumpy</label></div>
+  <div><input type="radio" name="dwarfs" id="thingy2" value="Happy">
+  <label for="thingy2">Happy</label></div>
+  <div><input type="radio" name="dwarfs" id="thingy3" value="Sleepy">
+  <label for="thingy3">Sleepy</label></div>
+  <button>Choose a dwarf</button>
+</form>
+ 
+<div id="return">
+  
+</div>
+ 
+<h2>Results</h2>
+  
+   <ul>
+      <li>Mouse: clicking on a label works</li>
+      <li>Keyboard: focus on radio changes the appearance of labels, hitting any key on radio works as expected.
+        <ul>
+         <li>Firefox Developer Edition 45.0a2 (2016-01-24)</li>
+         <li>Firefox ESR 38.2.1</li>
+         <li>IE 11 on Windows7 (full user agent for the record: <q>Mozilla/5.0 (Windows NT 6.1; WOW64; Trident/7.0; SLCC2; .NET CLR 2.0.50727; .NET CLR 3.5.30729; .NET CLR 3.0.30729; .NET4.0C; .NET4.0E; InfoPath.3; rv:11.0) like Gecko</q>)</li>
+        </ul>
+      </li>
+    </ul>   
+</body>
+</html>

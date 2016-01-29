@@ -6,6 +6,17 @@ body {
   background:#fff;
 }
 
+dt {
+  margin-top:1em;
+}
+
+del, del a {
+  color:#aaa;
+}
+ins {
+  color:#f00;
+}
+
 #return {
   margin:1em 0;
   padding:1em;
