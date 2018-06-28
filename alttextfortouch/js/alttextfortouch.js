@@ -4,7 +4,7 @@ function alttextfortouch() {
     var excludes = ["a","button"]; // list of all parents to be excluded
     var infoBubble = document.createElement("div");
     var infoBubbleClassname = "alttextfortouchInfobubble";
-    console.log(imgs);
+    // console.log(imgs);
 
     /* ------------------ HELPER FUNCTIONS -------------- */
     /*
@@ -44,15 +44,15 @@ function alttextfortouch() {
         /* var offsetX = e.offsetX; */
         /* var offsetY = e.offsetY; */
         hideBubble(e);
-        console.log(e);
+        // console.log(e);
         var callerImg = (e.target);
         var offset = getOffset(callerImg);
         infoBubble.innerText = callerImg.getAttribute("alt");
         document.querySelector('body').appendChild(infoBubble);
-        console.log(callerImg.getAttribute("alt"), offset.x, offset.y);
+        // console.log(callerImg.getAttribute("alt"), offset.x, offset.y);
         infoBubble.style.left = (offset.x + parseInt(window.getComputedStyle(callerImg).width, 10)/2 - parseInt(window.getComputedStyle(infoBubble).width, 10)/2 ) + "px";
         infoBubble.style.top = (offset.y - parseInt(window.getComputedStyle(infoBubble).height, 10) ) + "px";
-        console.log('bubble',window.getComputedStyle(infoBubble).top);
+        // console.log('bubble',window.getComputedStyle(infoBubble).top);
         e.stopPropagation();
         document.addEventListener("click",hideBubble);
 
@@ -67,12 +67,12 @@ function alttextfortouch() {
 
     function hideBubble(e) {
         if(infoBubble.parentNode) {
-            console.log(infoBubble);
+            // console.log(infoBubble);
             infoBubble.parentNode.removeChild(infoBubble);
             document.removeEventListener("click",hideBubble);
 
         } else {
-            console.log("not found",e);
+            // console.log("not found",e);
         }
     }
     
@@ -87,7 +87,7 @@ function alttextfortouch() {
         var parents = getParents(imgs[i]);
         parents.forEach( function (element) {
              if (excludes.indexOf(element.nodeName.toLowerCase()) !== -1) {
-                console.log(imgs[i], "TO EXCLUDE");
+                // console.log(imgs[i], "TO EXCLUDE");
                 isExcluded = true;
             }
         });
