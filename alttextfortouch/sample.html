@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Sample alt-text-for-touch page</title>
+    <script src="js/alttextfortouch.js"></script>
+</head>
+
+<body>
+    <h1>Sample “alternate text for touch” page</h1>
+    <p>Images which are not inside a
+        <code>a</code> or
+        <code>button</code> are targeted by the script.</p>
+
+    <p>Sample emoji images:</p>
+    <ul>
+        <li>
+            <img src="img/smile.png" alt="Smile">
+        </li>
+        <li>
+            <img src="img/thumbs-up.png" alt="Thumbs up">
+        </li>
+        <li>
+            <img src="img/vulcan-hand.png" alt="Vulcan salute">
+        </li>
+    </ul>
+
+    <p>
+        Images that will not trigger the script:
+    </p>
+
+    <ul>
+        <li><a href="void.html"><img src="img/arrow.png" alt="">This is a link</a></li>
+        <li><button><img src="img/checkmark.png" alt="">This is a button</button></li>
+    </ul>
+
+</body>
+
+</html>

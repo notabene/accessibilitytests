@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Alternate text for touch interfaces</title>
+</head>
+<body>
+
+    <p>Considering alternate text is useful for other people than screen reader users, we need a way to make emojis
+        easier to understand even if people can't see the <code>alt</code> attribute.
+        This Javascript method:</p>
+
+    <ol>
+        <li>Finds all images with an <code>alt</code> attribute</li>
+        <li>Adds a click event on them if they are not already inside a clickable zone (<code>a</code> or <code>button</code> for this proof of concept)</li>
+        <li>Shows a small info bubble with the image's alt text</li>
+    </ol>
+
+    <p>This provides for:</p>
+    <ul>
+        <li>People with low vision who don't know how to zoom their touch display</li>
+        <li>People who don't know the meaning of an emoji</li>
+    </ul>
+
+    <p><a href="sample.html">See sample page</a></p>
+</body>
+</html>

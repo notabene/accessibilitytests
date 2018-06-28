@@ -11,4 +11,4 @@ A. [Several tests](https://notabene.github.io/accessibilitytests/hiddeninputs/)
 
 ## alt text for touch interfaces
 
-Trying to add some Javascript to provide visible alternative text in a tooltip.
+Trying to add some Javascript to [provide visible alternative text in a tooltip for touch interfaces](https://notabene.github.io/accessibilitytests/alttextfortouch/).
