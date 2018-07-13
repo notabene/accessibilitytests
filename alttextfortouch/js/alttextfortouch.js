@@ -3,6 +3,8 @@ function alttextfortouch() {
     var imgs = document.querySelectorAll('img');
     var excludes = ["a","button"]; // list of all parents to be excluded
     var infoBubble = document.createElement("div");
+    var infoBubbleText = document.createElement("span");
+    infoBubble.appendChild(infoBubbleText);
     var infoBubbleClassname = "alttextfortouchInfobubble";
     // console.log(imgs);
 
@@ -32,7 +34,9 @@ function alttextfortouch() {
     }
 
     function styleBubble() {
-        var styleStr = "." + infoBubbleClassname + " { border:1px solid black; background:black; color:white; position:absolute; }";
+        var styleStr = "." + infoBubbleClassname + " { position:absolute; z-index:32000 } ";
+        styleStr += "." + infoBubbleClassname + " span { position:relative; border:.3em solid black; border-radius:.3em; background:black; color:white; } ";
+        styleStr += "." + infoBubbleClassname + "::before { position:absolute; content:''; width:.9em; height:.9em; background:black; bottom:-.4em; left:.5em; transform:rotate(45deg) } ";
         var s = document.createElement("style");
         s.innerText = styleStr;
         document.querySelector("head").appendChild(s);
@@ -47,7 +51,7 @@ function alttextfortouch() {
         // console.log(e);
         var callerImg = (e.target);
         var offset = getOffset(callerImg);
-        infoBubble.innerText = callerImg.getAttribute("alt");
+        infoBubbleText.innerText = callerImg.getAttribute("alt");
         document.querySelector('body').appendChild(infoBubble);
         // console.log(callerImg.getAttribute("alt"), offset.x, offset.y);
         infoBubble.style.left = (offset.x + parseInt(window.getComputedStyle(callerImg).width, 10)/2 - parseInt(window.getComputedStyle(infoBubble).width, 10)/2 ) + "px";
