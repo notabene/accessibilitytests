@@ -75,12 +75,12 @@ function alttextfortouch() {
      */
     function showOrHideBubble(e) {
         var callerImg = e.target;
-        if(callerImg.nodeName !== "IMG") {
+        if(callerImg.nodeName !== "IMG" || callerImg.dataset.infobubble === "noshow") {
             hideBubble();
             resetAttribute();
         } else { // if it's an image
             if(callerImg.dataset.infobubble === "show") { // the image has been diagnosed as an infobubble caller
-                // note: we use a 'data-' attribute because it prevents us from checking for image clickability every time
+                // note: we use a 'data-' attribute because it prevents us from checking for infobubble-ability every time
                 showBubble(callerImg);
                 resetAttribute();
                 callerImg.dataset.infobubble = "shown"; // bubble is shown
@@ -95,11 +95,18 @@ function alttextfortouch() {
                         isExcluded = true;
                     }
                 });
-                if(!isExcluded) { // if image not excluded from collection
+                if(callerImg.getAttribute("alt") === null || callerImg.getAttribute("alt") === "") {
+                    isExcluded = true;
+                }
+                /* whatever the result, hide current bubble and reset 'shown' attribute */
+                hideBubble();
+                resetAttribute();
+                if(isExcluded) {
+                    callerImg.dataset.infobubble = "noshow";
+                } else { // if image not excluded from collection
                     showBubble(callerImg);
-                    resetAttribute();
                     callerImg.dataset.infobubble = "shown"; // bubble is shown
-                    }
+                }
             }
 
         }

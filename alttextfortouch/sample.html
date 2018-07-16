@@ -14,6 +14,7 @@
     <p>Images which are not inside a
         <code>a</code> or
         <code>button</code> are targeted by the script.</p>
+    <p>The script was also tested for dynamically-added images (as in a chatbot modal).</p>
 
     <p>Sample emoji images:</p>
     <ul>
@@ -21,10 +22,13 @@
             <img src="img/smile.png" alt="Smile">
         </li>
         <li>
-            <img src="img/thumbs-up.png" alt="Thumbs up">
+            <img src="img/vulcan-hand.png" alt="Vulcan salute">
         </li>
         <li>
-            <img src="img/vulcan-hand.png" alt="Vulcan salute">
+            <img src="img/thumbs-up.png"> <!-- alt="Thumbs up" --> (this image has no alt, for script validation sake: it should not display an empty infobubble)
+        </li>
+        <li>
+            <img src="img/thumbs-up.png" alt=""> (this image has an empty alt, for script validation sake: it should not display an empty infobubble)
         </li>
     </ul>
 
