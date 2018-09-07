@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Accessibility test for definition lists with ARIA</title>
+</head>
+<body>
+    <h1>Definition lists</h1>
+    <p>This page shows a <code>dl/dt/dd</code> example with ARIA associations.</p>
+
+
+    <dl>
+        <dt id="farm">Animals in a farm</dt>
+        <dd aria-describedby="farm">Cow</dd>
+        <dd aria-describedby="farm">Horse</dd>
+        <dd aria-describedby="farm">Goose</dd>
+        <dt id="city">Animals in a city</dt>
+        <dd aria-describedby="city">Pigeons</dd>
+        <dd aria-describedby="city">Dogs</dd>
+        <dd aria-describedby="city">Rats</dd>
+        <dt id="boat">Animals on a boat</dt>
+        <dd aria-describedby="boat">Rats</dd>
+        <dd aria-describedby="boat">Parrots for pirates</dd>
+    </dl>
+</body>
+</html>
